@@ -34,7 +34,7 @@ function escolheponto() {
 function draw() {
   background(100, 0, 0);
   casa();
-  eu();
+  //eu();
   move();
   verificarcoliborda();
   inimigo();
