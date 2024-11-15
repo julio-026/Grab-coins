@@ -51,7 +51,7 @@ function eu() {
 
 function move() {
   if (keyIsDown(RIGHT_ARROW)) {
-    eupx += vl;
+    eupx -= vl;
   }
   if (keyIsDown(LEFT_ARROW)) {
     eupx -= vl;
