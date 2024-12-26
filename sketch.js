@@ -23,6 +23,7 @@ function preload() {
 function setup() {
   createCanvas(400, 400);
   escolheponto();
+  trilha.play();
   trilha.loop();
 }
 function escolheponto() {
