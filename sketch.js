@@ -44,7 +44,7 @@ function draw() {
 }
 
 function eu() {
-  fill("blue");
+  fill("white");
   rect(eupx, eupy, 20, 20, 10, 10, 4);
 }
 
