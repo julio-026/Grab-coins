@@ -23,7 +23,7 @@ function preload() {
 function setup() {
   createCanvas(400, 400);
   escolheponto();
-  
+  trilha.loop();
 }
 function escolheponto() {
   pxdp = random(0, 380);
@@ -31,7 +31,7 @@ function escolheponto() {
 }
 
 function draw() {
-  trilha.play();
+  
   background(100, 0, 0);
   casa();
   eu();
