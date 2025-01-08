@@ -23,7 +23,7 @@ function preload() {
 function setup() {
   createCanvas(400, 400);
   escolheponto();
-  trilha.loop();
+  
 }
 function escolheponto() {
   pxdp = random(0, 380);
