@@ -1,20 +1,21 @@
+
 let eupx = 200;
 let eupy = 380;
 
-let vl = 10;
+let velocidade = 10;
 
 let inpx = 200;
 let inpy = 0;
 
 let tempo = 0;
 
-let mponto = 0;
+let meuponto = 0;
 
 let vida = 3;
 
-let sf = 320;
+let sefezone = 320;
 
-let pp = 5;
+let blackspeed = 5;
 
 function preload() {
   trilha = loadSound("som.mp3");
@@ -51,16 +52,16 @@ function eu() {
 
 function move() {
   if (keyIsDown(RIGHT_ARROW)) {
-    eupx += vl;
+    eupx += velocidade;
   }
   if (keyIsDown(LEFT_ARROW)) {
-    eupx -= vl;
+    eupx -= velocidade;
   }
   if (keyIsDown(UP_ARROW)) {
-    eupy -= vl;
+    eupy -= velocidade;
   }
   if (keyIsDown(DOWN_ARROW)) {
-    eupy += vl;
+    eupy += velocidade;
   }
 }
 
@@ -85,16 +86,16 @@ function inimigo() {
   rect(inpx, inpy, 20, 20, 20, 20, 0);
 
   if (inpx < eupx) {
-    inpx += pp;
+    inpx += blackspeed;
   }
   if (inpy < eupy) {
-    inpy += pp;
+    inpy += blackspeed;
   }
   if (inpx > eupx) {
-    inpx -= pp;
+    inpx -= blackspeed;
   }
   if (inpy > eupy) {
-    inpy -= pp;
+    inpy -= blackspeed;
   }
 }
 
@@ -125,24 +126,24 @@ function ponto() {
   ) {
     escolheponto();
     sompo.play();
-    pp = -5;
+    blackspeed = -5;
 
-    mponto += 1;
+    meuponto += 1;
   }
-  if (pp < -4) {
-    pp += 10;
+  if (blackspeed < -4) {
+    blackspeed += 10;
   }
 }
 
 function casa() {
   fill("green");
-  rect(sf, sf, 80, 80);
-  if (inpx > sf - 20 && inpy > sf - 20 && inpx < sf + 80 && inpy < sf + 80) {
+  rect(sefezone, sefezone, 80, 80);
+  if (inpx > sefezone - 20 && inpy > sefezone - 20 && inpx < sefezone + 80 && inpy < sefezone + 80) {
     inpx -= 5;
     inpy -= 5;
   }
   
-  if(eupx > sf - 20 && eupy > sf - 20 && eupx < sf + 80 && eupy < sf + 80){tempo-=1}
+  if(eupx > sefezone - 20 && eupy > sefezone - 20 && eupx < sefezone + 80 && eupy < sefezone + 80){tempo-=1}
   
 }
 
@@ -152,18 +153,22 @@ function life() {
   }
 
   rect(4, 4, 20, 30, 20);
-  text(mponto, 25, 30);
+  text(meuponto, 25, 30);
   fill("red");
-  text("vida " + (vida + mponto / 2), 70, 30);
+  text("vida " + (vida + meuponto / 2), 70, 30);
 
   textSize(32);
 
-  if (vida + mponto / 2 < 0.5) {
+  if (vida + meuponto / 2 < 0.5) {
     eupx = 360;
     eupy = 360;
 
-    mponto *= 0;
-    tempo *= 0;
+    meuponto *= 0;
+    tempo *= 0 ;
+    tempo+=1;
     vida = 3;
   }
 }
+
+
+

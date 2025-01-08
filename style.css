@@ -1,8 +1,26 @@
 html, body {
-  margin: 0;
-  padding: 0;
-  max-width: 1000px;
+  margin-left: 100px;
+  padding-right: 200px;
+  background: slategray;
+  max-width: 1500px;
+  
 }
+
+
+
 canvas {
   display: block;
 }
+
+.palavra{
+
+  color: darkblue;
+   width: 500px;
+
+ margin-left: 10px;
+  border-bottom: solid 2px rgb(42, 122, 228);
+  padding-left: 20px ;
+  
+}
+
+
